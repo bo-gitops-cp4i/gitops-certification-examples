@@ -5,10 +5,10 @@ metadata:
   labels:
     app: demo
 spec:
-  ports:
-  - nodePort: 31000
-    protocol: TCP
-    port: 8080
+  type: ClusterIP
   selector:
     app: demo
-  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
